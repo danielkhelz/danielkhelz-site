@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Daniel Khelz (Daniel Calzone) — Violista professionista, DJ & Producer, Tecnico Audio, Stage Manager. Conservatorio Giuseppe Verdi di Milano.">
+    <meta name="description" content="Daniel Khelz (Daniel Calzone) - Violista Professionista, DJ & Producer, Tecnico Audio, Stage Manager. Conservatorio Giuseppe Verdi Milano.">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="author" content="Daniel Khelz">
     <title>Daniel Khelz | Violista • DJ & Producer</title>
@@ -13,7 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Daniel Khelz | Violista • DJ & Producer">
     <meta property="og:description" content="Violista professionista, DJ & Producer, Tecnico Audio e Stage Manager. Fusione tra viola classica, jazz e live electronics.">
-    <meta property="og:image" content="assets/images/photo2.jpg">
+    <meta property="og:image" content="images/photo2.jpg">
     <meta property="og:url" content="https://danielkhelz.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Daniel Khelz | Violista • DJ & Producer">
@@ -21,7 +21,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <script type="application/ld+json">
@@ -47,453 +50,547 @@
     }
     </script>
 </head>
-<body>
+<body class="bg-neutral-950 text-white">
     <a href="#main" class="skip-link">Salta al contenuto</a>
 
-    <nav class="nav" role="navigation" aria-label="Navigazione principale">
-        <div class="nav__inner container">
-            <a href="#" class="nav__brand" aria-label="Daniel Khelz — Home">DANIEL <span>KHELZ</span></a>
+    <nav class="bg-black/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50" role="navigation" aria-label="Navigazione principale">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between gap-4">
+            <a href="#" class="heading-font text-xl sm:text-2xl md:text-3xl tracking-tighter brand-link shrink-0" aria-label="Daniel Khelz - Home">DANIEL KHELZ</a>
 
-            <div class="nav__links">
-                <a href="#bio" class="nav__link" data-section="bio">Bio</a>
-                <a href="#esperienze" class="nav__link" data-section="esperienze">Esperienze</a>
-                <a href="#galleria" class="nav__link" data-section="galleria">Galleria</a>
-                <a href="#musica" class="nav__link" data-section="musica">Musica</a>
-                <a href="#contatti" class="nav__link" data-section="contatti">Contatti</a>
+            <div class="hidden md:flex items-center gap-x-8 lg:gap-x-10 text-sm uppercase tracking-widest font-medium">
+                <a href="#bio" class="nav-link" data-section="bio">BIO</a>
+                <a href="#esperienze" class="nav-link" data-section="esperienze">ESPERIENZE</a>
+                <a href="#galleria" class="nav-link" data-section="galleria">GALLERIA</a>
+                <a href="#musica" class="nav-link" data-section="musica">MUSICA</a>
+                <a href="#contatti" class="nav-link" data-section="contatti">CONTATTI</a>
             </div>
 
-            <div class="nav__actions">
-                <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--sm nav__cta" aria-label="Contattami su Instagram">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.81s0 3.54-.07 4.81c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.81.07s-3.54 0-4.81-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.54 2.2 15.16 2.2 12s0-3.54.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.46 2.2 8.84 2.2 12 2.2m0 1.78c-3.11 0-3.47.01-4.7.07-1.08.05-1.67.23-2.06.38-.52.2-.89.44-1.28.83-.39.39-.63.76-.83 1.28-.15.39-.33.98-.38 2.06-.06 1.23-.07 1.59-.07 4.7s.01 3.47.07 4.7c.05 1.08.23 1.67.38 2.06.2.52.44.89.83 1.28.39.39.76.63 1.28.83.39.15.98.33 2.06.38 1.23.06 1.59.07 4.7.07s3.47-.01 4.7-.07c1.08-.05 1.67-.23 2.06-.38.52-.2.89-.44 1.28-.83.39-.39.63-.76.83-1.28.15-.39.33-.98.38-2.06.06-1.23.07-1.59.07-4.7s-.01-3.47-.07-4.7c-.05-1.08-.23-1.67-.38-2.06-.2-.52-.44-.89-.83-1.28a3.4 3.4 0 0 0-1.28-.83c-.39-.15-.98-.33-2.06-.38-1.23-.06-1.59-.07-4.7-.07M12 6.87a5.13 5.13 0 1 1 0 10.26 5.13 5.13 0 0 1 0-10.26m0 8.46a3.33 3.33 0 1 0 0-6.66 3.33 3.33 0 0 0 0 6.66m6.54-8.67a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0"/></svg>
-                    Contattami
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="https://www.instagram.com/danielkheelz/?hl=en"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="hidden sm:inline-flex px-5 py-2.5 sm:px-6 sm:py-3 bg-blue-500 hover:bg-white text-black font-semibold text-xs sm:text-sm uppercase tracking-widest rounded-3xl items-center gap-x-2"
+                   aria-label="Contattami su Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    CONTATTAMI
                 </a>
 
-                <button type="button" class="nav__toggle" aria-label="Apri menu mobile" aria-expanded="false" aria-controls="mobileMenu">
-                    <svg class="icon icon--bars" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+                <button type="button"
+                        class="md:hidden text-2xl sm:text-3xl p-2 -mr-2"
+                        aria-label="Apri menu mobile"
+                        aria-expanded="false"
+                        aria-controls="mobileMenu">
+                    <i class="fa-solid fa-bars hamburger-icon" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobileMenu" class="nav__mobile" role="menu" hidden>
-            <a href="#bio" role="menuitem">Bio</a>
-            <a href="#esperienze" role="menuitem">Esperienze</a>
-            <a href="#galleria" role="menuitem">Galleria</a>
-            <a href="#musica" role="menuitem">Musica</a>
-            <a href="#contatti" role="menuitem">Contatti</a>
-            <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" class="btn btn--accent" role="menuitem">Contattami su Instagram</a>
+        <div id="mobileMenu" class="hidden md:hidden bg-black border-t border-white/10 px-4 sm:px-6 py-6" role="menu">
+            <div class="flex flex-col gap-y-5 text-sm uppercase tracking-widest font-medium">
+                <a href="#bio" class="block py-2" role="menuitem">BIO</a>
+                <a href="#esperienze" class="block py-2" role="menuitem">ESPERIENZE</a>
+                <a href="#galleria" class="block py-2" role="menuitem">GALLERIA</a>
+                <a href="#musica" class="block py-2" role="menuitem">MUSICA</a>
+                <a href="#contatti" class="block py-2" role="menuitem">CONTATTI</a>
+                <a href="https://www.instagram.com/danielkheelz/?hl=en"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="mt-2 py-3 text-center bg-blue-500 text-black font-semibold rounded-3xl sm:hidden"
+                   role="menuitem">
+                    <i class="fa-brands fa-instagram mr-2" aria-hidden="true"></i>CONTATTAMI
+                </a>
+            </div>
         </div>
     </nav>
 
     <main id="main">
-
-        <header id="hero" class="hero">
-            <div class="container hero__inner reveal">
-                <div class="hero__badge" role="text">
-                    <span class="dot" aria-hidden="true"></span>Milano
-                    <span class="dot" aria-hidden="true"></span>Live Electronics
-                    <span class="dot" aria-hidden="true"></span>DJ
-                </div>
-
-                <h1 class="hero__title">DANIEL<br>KHELZ</h1>
-
-                <p class="hero__subtitle">
-                    Violista professionista.<br>
-                    DJ &amp; Producer.<br>
-                    Tecnico Audio &amp; Stage Manager.
-                </p>
-
-                <div class="hero__cta">
-                    <a href="#musica" class="btn btn--primary btn--lg" aria-label="Ascolta la mia musica">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-9 9v7a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H5v-1a7 7 0 1 1 14 0v1h-2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9"/></svg>
-                        Ascolta la mia musica
-                    </a>
-                    <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--lg" aria-label="Visita il canale YouTube">
-                        <svg class="icon icon--yt" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8M9.6 15.6V8.4L15.8 12z"/></svg>
-                        Canale YouTube
-                    </a>
-                    <a href="#esperienze" class="btn btn--ghost btn--lg" aria-label="Vedi i prossimi live e le esperienze">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 10V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 1 1 0 4v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 1 1 0-4m-9 7.5h-2v-2h2zm0-4.5h-2v-2h2zm0-4.5h-2v-2h2z"/></svg>
-                        Prossimi live
-                    </a>
-                </div>
-
-                <div class="hero__facts">
-                    <div>
-                        <span class="hero__facts-label">In attività</span>
-                        Prima Viola • Verdi Jazz Orchestra
+        <header id="hero" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-2xl mx-auto text-center reveal">
+                    <div class="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-2 bg-white/10 text-blue-500 text-xs font-mono tracking-[2px] px-4 sm:px-5 py-2 rounded-3xl">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full pulsing-dot" aria-hidden="true"></div>
+                        MILANO
+                        <div class="w-2 h-2 bg-blue-500 rounded-full pulsing-dot" aria-hidden="true"></div>
+                        LIVE ELECTRONICS
+                        <div class="w-2 h-2 bg-blue-500 rounded-full pulsing-dot" aria-hidden="true"></div>
+                        DJ
                     </div>
-                    <div class="hero__facts-divider" aria-hidden="true"></div>
-                    <div>
-                        <span class="hero__facts-label">2025–2026</span>
-                        Tour Il Volo • X Factor
+
+                    <h1 class="heading-font hero-h1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tighter mt-8">
+                        DANIEL<br>KHELZ
+                    </h1>
+
+                    <p class="text-xl sm:text-2xl md:text-3xl text-neutral-400 mt-8">
+                        Violista professionista.<br>
+                        DJ & Producer.<br>
+                        Tecnico Audio & Stage Manager.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-4 mt-12 justify-center">
+                        <a href="#musica"
+                           class="w-full sm:w-auto px-8 py-5 bg-white text-black font-semibold rounded-3xl text-lg flex items-center justify-center gap-x-3 hover:scale-105 focus:scale-105"
+                           aria-label="Ascolta la mia musica">
+                            <i class="fa-solid fa-headphones" aria-hidden="true"></i>
+                            ASCOLTA LA MIA MUSICA
+                        </a>
+                        <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto px-8 py-5 border border-white/30 hover:border-blue-500 rounded-3xl text-lg flex items-center justify-center gap-x-3"
+                           aria-label="Visita il canale YouTube">
+                            <i class="fa-brands fa-youtube text-red-500" aria-hidden="true"></i>
+                            CANALE YOUTUBE
+                        </a>
+                        <a href="#esperienze"
+                           class="w-full sm:w-auto px-8 py-5 border border-white/30 hover:border-blue-500 rounded-3xl text-lg flex items-center justify-center gap-x-3"
+                           aria-label="Vedi i prossimi live e esperienze">
+                            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                            PROSSIMI LIVE
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-y-4 sm:gap-y-0 sm:gap-x-8 text-sm pt-10 justify-center">
+                        <div class="text-center sm:text-left">
+                            <span class="block text-blue-500 text-xs tracking-widest">IN ATTIVITÀ</span>
+                            PRIMA VIOLA • VERDI JAZZ ORCHESTRA
+                        </div>
+                        <div class="hidden sm:block h-10 w-px bg-white/20" aria-hidden="true"></div>
+                        <div class="text-center sm:text-left">
+                            <span class="block text-blue-500 text-xs tracking-widest">2025–2026</span>
+                            TOUR IL VOLO • X FACTOR
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section id="bio" class="section container">
-            <div class="bio reveal">
-                <h2 class="section__title">Profilo<br>professionale</h2>
-                <div class="bio__text">
-                    <p>Daniel Calzone, in arte <strong>Daniel Khelz</strong>. Musicista e tecnico audio con oltre dieci anni di esperienza orchestrale e nella gestione di eventi dal vivo.</p>
-                    <p>Specializzato in viola con competenze avanzate in post-produzione audio, stage management e direzione di produzione. Laureato in Nuove Tecnologie Musicali con specializzazione in Musica Elettronica e Tecnico del Suono al Conservatorio Giuseppe Verdi di Milano.</p>
-                    <p>La sua identità artistica unisce viola classica, jazz e produzione elettronica — live electronics, DJ set e post-produzione in un unico percorso professionale.</p>
+        <section id="bio" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 border-b border-white/10">
+            <div class="grid md:grid-cols-12 gap-8 md:gap-16 reveal">
+                <div class="md:col-span-4">
+                    <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter">PROFILO PROFESSIONALE</h2>
+                </div>
+                <div class="md:col-span-8 text-lg md:text-xl leading-relaxed text-neutral-300">
+                    <p>Daniel Calzone, in arte <strong class="text-white font-medium">Daniel Khelz</strong>. Musicista e tecnico audio con oltre dieci anni di esperienza orchestrale e nella gestione di eventi dal vivo.</p>
+                    <p class="mt-6">Specializzato in viola con competenze avanzate in post-produzione audio, stage management e direzione di produzione. Laureato in Nuove Tecnologie Musicali con specializzazione in Musica Elettronica e Tecnico del Suono al Conservatorio Giuseppe Verdi di Milano.</p>
+                    <p class="mt-6">La sua identità artistica unisce viola classica, jazz e produzione elettronica — live electronics, DJ set e post-produzione in un unico percorso professionale.</p>
                 </div>
             </div>
         </section>
 
-        <section id="esperienze" class="section section--raised">
-            <div class="container">
-                <div class="section__head reveal">
-                    <h2 class="section__title">Esperienze professionali</h2>
-                    <span class="section__tag">2012 — oggi</span>
-                </div>
+        <section id="esperienze" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 bg-neutral-900">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-10 reveal">
+                <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter">ESPERIENZE PROFESSIONALI</h2>
+                <span class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest">2012 — OGGI</span>
+            </div>
 
-                <div class="exp-group reveal">
-                    <h3 class="exp-group__label">Esperienze orchestrali</h3>
-                    <div class="cards cards--2">
-                        <article class="card">
-                            <div class="card__head">
+            <div class="space-y-16">
+                <div class="reveal">
+                    <h3 class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest mb-6">ESPERIENZE ORCHESTRALI</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Prima Viola</h4>
-                                    <p class="card__org">Verdi Jazz Orchestra</p>
+                                    <h4 class="font-semibold text-lg">Prima Viola</h4>
+                                    <p class="text-blue-500">Verdi Jazz Orchestra</p>
                                 </div>
-                                <time>Dal 2020 → in attività</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">Dal 2020 → in attività</time>
                             </div>
-                            <p>Ruolo di sezione leader nella viola all'interno di formazione jazz sinfonica. Esecuzioni regolari in contesti di alta qualità artistica.</p>
+                            <p class="text-neutral-300">Ruolo di sezione leader nella viola all'interno di formazione jazz sinfonica. Esecuzioni regolari in contesti di alta qualità artistica.</p>
                         </article>
 
-                        <article class="card">
-                            <div class="card__head">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Violista</h4>
-                                    <p class="card__org">Orchestra Conservatorio Giuseppe Verdi Milano</p>
+                                    <h4 class="font-semibold text-lg">Violista</h4>
+                                    <p class="text-blue-500">Orchestra Conservatorio Giuseppe Verdi Milano</p>
                                 </div>
-                                <time>Dal 2016 → in attività</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">Dal 2016 → in attività</time>
                             </div>
-                            <p>Collaborazione continuativa con l'orchestra del Conservatorio. Partecipazione a stagioni concertistiche e produzioni teatrali.</p>
+                            <p class="text-neutral-300">Collaborazione continuativa con l'orchestra del Conservatorio. Partecipazione a stagioni concertistiche e produzioni teatrali.</p>
                         </article>
 
-                        <article class="card">
-                            <div class="card__head">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Prima Viola</h4>
-                                    <p class="card__org">Abbazia Jazz Festival</p>
+                                    <h4 class="font-semibold text-lg">Prima Viola</h4>
+                                    <p class="text-blue-500">Abbazia Jazz Festival</p>
                                 </div>
-                                <time>2023</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">2023</time>
                             </div>
-                            <p>Concerto con David Weckl e il pianista Antonio Farò. Performance in contesto di festival prestigioso.</p>
+                            <p class="text-neutral-300">Concerto con David Weckl e il pianista Antonio Farò. Performance in contesto di festival prestigioso.</p>
                         </article>
 
-                        <article class="card">
-                            <div class="card__head">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Prima Viola</h4>
-                                    <p class="card__org">Mondaino Youth Orchestra</p>
+                                    <h4 class="font-semibold text-lg">Prima Viola</h4>
+                                    <p class="text-blue-500">Mondaino Youth Orchestra</p>
                                 </div>
-                                <time>2023</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">2023</time>
                             </div>
-                            <p>Concerto con Stevie Biondi e Simona Bencini (cantante dei Dirotta su Cuba). Esperienza in orchestra giovanile di eccellenza.</p>
+                            <p class="text-neutral-300">Concerto con Stevie Biondi e Simona Bencini (cantante dei Dirotta su Cuba). Esperienza in orchestra giovanile di eccellenza.</p>
                         </article>
 
-                        <article class="card">
-                            <div class="card__head">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Violista</h4>
-                                    <p class="card__org">Monferrato Classic Orchestra</p>
+                                    <h4 class="font-semibold text-lg">Violista</h4>
+                                    <p class="text-blue-500">Monferrato Classic Orchestra</p>
                                 </div>
-                                <time>2021</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">2021</time>
                             </div>
-                            <p>Partecipazione a produzioni orchestrali regionali.</p>
+                            <p class="text-neutral-300">Partecipazione a produzioni orchestrali regionali.</p>
                         </article>
 
-                        <article class="card">
-                            <div class="card__head">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Violista</h4>
-                                    <p class="card__org">Orchestra GD Major</p>
+                                    <h4 class="font-semibold text-lg">Violista</h4>
+                                    <p class="text-blue-500">Orchestra GD Major</p>
                                 </div>
-                                <time>Settembre 2018</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">Settembre 2018</time>
                             </div>
-                            <p>Esibizione alla Fashion Week di Roma. Collaborazione con eventi fashion e culturali di alto profilo.</p>
+                            <p class="text-neutral-300">Esibizione alla Fashion Week di Roma. Collaborazione con eventi fashion e culturali di alto profilo.</p>
                         </article>
 
-                        <article class="card">
-                            <div class="card__head">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Violista</h4>
-                                    <p class="card__org">FuturOrchestra</p>
+                                    <h4 class="font-semibold text-lg">Violista</h4>
+                                    <p class="text-blue-500">FuturOrchestra</p>
                                 </div>
-                                <time>2014–2016</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">2014–2016</time>
                             </div>
-                            <p>Orchestra del Teatro Dal Verme di Milano. Esperienza formativa in contesto professionale milanese.</p>
+                            <p class="text-neutral-300">Orchestra del Teatro Dal Verme di Milano. Esperienza formativa in contesto professionale milanese.</p>
                         </article>
 
-                        <article class="card">
-                            <div class="card__head">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>Violinista e Violista di Fila</h4>
-                                    <p class="card__org">Orchestra ICM Milano</p>
+                                    <h4 class="font-semibold text-lg">Violinista e Violista di Fila</h4>
+                                    <p class="text-blue-500">Orchestra ICM Milano</p>
                                 </div>
-                                <time>2012–2014</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">2012–2014</time>
                             </div>
-                            <p>Prime esperienze orchestrali professionali. Sviluppo di competenze tecniche e di sezione.</p>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="exp-group reveal">
-                    <h3 class="exp-group__label">Quartetti e collaborazioni da camera</h3>
-                    <div class="cards cards--3">
-                        <article class="card">
-                            <div class="card__head">
-                                <div>
-                                    <h4>Violista</h4>
-                                    <p class="card__org">Sunrise Jazz String Quartet</p>
-                                </div>
-                                <time>in attività</time>
-                            </div>
-                            <p>Collaborazioni con Cinzia Tedesco e Pino Iodice. Repertorio jazz e crossover.</p>
-                        </article>
-
-                        <article class="card">
-                            <div class="card__head">
-                                <div>
-                                    <h4>Violista</h4>
-                                    <p class="card__org">"Mister Puccini in Jazz"</p>
-                                </div>
-                                <time>5 nov 2024 • Roma</time>
-                            </div>
-                            <p>Performance con il Sunrise Jazz String Quartet e la cantante Cinzia Tedesco all'Auditorium Parco della Musica.</p>
-                        </article>
-
-                        <article class="card">
-                            <div class="card__head">
-                                <div>
-                                    <h4>Violista</h4>
-                                    <p class="card__org">Tour "Michael - The Show"</p>
-                                </div>
-                                <time>Dicembre 2024</time>
-                            </div>
-                            <p>Tournée nazionale con Jonathan Moffett e Jennifer Batten. Gestione di performance live ad alto livello tecnico.</p>
-                        </article>
-
-                        <article class="card">
-                            <div class="card__head">
-                                <div>
-                                    <h4>Viola</h4>
-                                    <p class="card__org">Davide Cabiddu's Quartet</p>
-                                </div>
-                                <time>2022–2023</time>
-                            </div>
-                            <p>Registrazione album "Nutopia".</p>
+                            <p class="text-neutral-300">Prime esperienze orchestrali professionali. Sviluppo di competenze tecniche e di sezione.</p>
                         </article>
                     </div>
                 </div>
 
-                <div class="exp-group reveal">
-                    <h3 class="exp-group__label">DJ &amp; Live Electronics</h3>
-                    <div class="cards cards--2">
-                        <article class="card">
-                            <div class="card__head">
+                <div class="reveal">
+                    <h3 class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest mb-6">QUARTETTI E COLLABORAZIONI DA CAMERA</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
                                 <div>
-                                    <h4>DJ • Daniel Khelz</h4>
-                                    <p class="card__org">Vari club Milano e party privati</p>
+                                    <h4 class="font-semibold text-lg">Violista</h4>
+                                    <p class="text-blue-500">Sunrise Jazz String Quartet</p>
                                 </div>
-                                <time>Dal 2020 → in attività</time>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">in attività</time>
                             </div>
-                            <p>Performance live electronics e set musicali in contesti club e privati.</p>
+                            <p class="text-neutral-300">Collaborazioni con Cinzia Tedesco e Pino Iodice. Repertorio jazz e crossover.</p>
+                        </article>
+
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg">Violista</h4>
+                                    <p class="text-blue-500">"Mister Puccini in Jazz"</p>
+                                </div>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">5 nov 2024 • Roma</time>
+                            </div>
+                            <p class="text-neutral-300">Performance con il Sunrise Jazz String Quartet e la cantante Cinzia Tedesco all'Auditorium Parco della Musica.</p>
+                        </article>
+
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg">Violista</h4>
+                                    <p class="text-blue-500">Tour "Michael - The Show"</p>
+                                </div>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">Dicembre 2024</time>
+                            </div>
+                            <p class="text-neutral-300">Tournée nazionale con Jonathan Moffett e Jennifer Batten. Gestione di performance live ad alto livello tecnico.</p>
+                        </article>
+
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg">Viola</h4>
+                                    <p class="text-blue-500">Davide Cabiddu's Quartet</p>
+                                </div>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">2022–2023</time>
+                            </div>
+                            <p class="text-neutral-300">Registrazione album "Nutopia".</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest mb-6">DJ & LIVE ELECTRONICS</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
+                            <div class="flex justify-between items-start mb-6 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg">DJ • Daniel Khelz</h4>
+                                    <p class="text-blue-500">Vari club Milano e party privati</p>
+                                </div>
+                                <time class="text-right text-sm text-neutral-400 shrink-0">Dal 2020 → in attività</time>
+                            </div>
+                            <p class="text-neutral-300">Performance live electronics e set musicali in contesti club e privati.</p>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="galleria" class="section container">
-            <div class="section__head reveal">
-                <h2 class="section__title">Galleria</h2>
-                <span class="section__tag">Performance &amp; ritratti</span>
+        <section id="galleria" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 border-b border-white/10">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-10 reveal">
+                <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter">GALLERIA</h2>
+                <span class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest">PERFORMANCE & RITRATTI</span>
             </div>
 
-            <div class="gallery reveal">
-                <div class="media" data-gallery-index="0" role="button" tabindex="0" aria-label="Apri foto in grande: Daniel Khelz in studio">
-                    <img src="assets/images/photo1.jpg"
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+                <div data-gallery-index="0"
+                     class="group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-neutral-900"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Apri foto in grande: Daniel Khelz in studio">
+                    <img src="images/photo1.jpg"
                          alt="Daniel Khelz in maglietta nera con cuffie mentre mixa su controller Pioneer in studio con muro di mattoni a vista"
-                         loading="lazy" width="800" height="600">
-                    <div class="media__caption">In studio • Live Electronics</div>
+                         class="w-full aspect-[4/3] sm:aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                         loading="lazy"
+                         width="800"
+                         height="600">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 media-caption">IN STUDIO • LIVE ELECTRONICS</div>
                 </div>
 
-                <div class="media" data-gallery-index="1" role="button" tabindex="0" aria-label="Apri foto in grande: Daniel Khelz in smoking al mixer in bar elegante">
-                    <img src="assets/images/photo2.jpg"
+                <div data-gallery-index="1"
+                     class="group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-neutral-900"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Apri foto in grande: Daniel Khelz in smoking al mixer in bar elegante">
+                    <img src="images/photo2.jpg"
                          alt="Daniel Khelz in completo nero con cuffie mentre mixa in elegante bar con scaffali pieni di bottiglie di liquori"
-                         loading="lazy" width="800" height="600">
-                    <div class="media__caption">DJ set • Location esclusiva</div>
+                         class="w-full aspect-[4/3] sm:aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                         loading="lazy"
+                         width="800"
+                         height="600">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 media-caption">DJ SET • LOCATION ESCLUSIVA</div>
                 </div>
             </div>
 
-            <div class="gallery__videos reveal">
-                <div class="rule-title">
-                    <h3>Video</h3>
-                    <div class="rule" aria-hidden="true"></div>
+            <div class="mt-14 reveal">
+                <div class="flex items-baseline gap-x-4 mb-6">
+                    <h3 class="text-xl font-semibold tracking-tight">Video</h3>
+                    <div class="flex-1 h-px bg-white/10"></div>
                 </div>
 
-                <div class="gallery">
-                    <div class="media media--video" data-video-index="0" role="button" tabindex="0" aria-label="Riproduci video DJ performance in club">
-                        <video src="assets/videos/video1.mp4" class="preview-video" muted loop playsinline preload="metadata"
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div data-video-index="0"
+                         class="group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-black"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Riproduci video DJ performance in club">
+                        <video src="videos/video1.mp4"
+                               class="preview-video w-full aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                               muted loop playsinline preload="metadata"
                                aria-label="Anteprima video: DJ set live con controller Pioneer in ambiente club"></video>
-                        <div class="media__caption">DJ set live • Club</div>
-                        <div class="media__play" aria-hidden="true">
-                            <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 media-caption">DJ SET LIVE • CLUB</div>
                     </div>
 
-                    <div class="media media--video" data-video-index="1" role="button" tabindex="0" aria-label="Riproduci video reel artistico">
-                        <video src="assets/videos/video2.mp4" class="preview-video" muted loop playsinline preload="metadata"
+                    <div data-video-index="1"
+                         class="group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-black"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Riproduci video reel artistico">
+                        <video src="videos/video2.mp4"
+                               class="preview-video w-full aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                               muted loop playsinline preload="metadata"
                                aria-label="Anteprima video: Reel artistico con luci e performance"></video>
-                        <div class="media__caption">Reel artistico</div>
-                        <div class="media__play" aria-hidden="true">
-                            <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     </div>
                 </div>
             </div>
 
-            <p class="gallery__hint">Clicca su foto o video per ingrandire / riprodurre con audio</p>
+            <p class="text-center text-neutral-500 text-xs tracking-widest mt-8">CLICCA SU FOTO O VIDEO PER INGRANDIRE / RIPRODURRE CON AUDIO</p>
         </section>
 
-        <section id="musica" class="section section--raised">
-            <div class="container">
-                <div class="section__head reveal">
-                    <h2 class="section__title">La mia musica</h2>
-                </div>
-
-                <div class="music reveal">
-                    <div class="music__col">
-                        <div class="music__head">
-                            <span class="music__label music__label--spotify">Playlist Spotify</span>
-                            <a href="https://open.spotify.com/playlist/4oO1Q2nvfIxuNTBZfzrrqg" target="_blank" rel="noopener noreferrer" aria-label="Apri playlist su Spotify">
-                                Apri su Spotify
-                                <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14zM5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
-                            </a>
-                        </div>
-                        <iframe class="music__embed" src="https://open.spotify.com/embed/playlist/4oO1Q2nvfIxuNTBZfzrrqg" width="100%" height="360" frameborder="0" allow="encrypted-media" loading="lazy" title="Playlist Spotify Daniel Khelz"></iframe>
-                    </div>
-
-                    <div class="music__col">
-                        <div class="music__head">
-                            <span class="music__label music__label--soundcloud">SoundCloud</span>
-                            <a href="https://soundcloud.com/daniel_khelz" target="_blank" rel="noopener noreferrer" aria-label="Apri profilo su SoundCloud">
-                                Apri su SoundCloud
-                                <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14zM5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
-                            </a>
-                        </div>
-                        <iframe class="music__embed" width="100%" height="360" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/daniel_khelz&color=%233b82f6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="Profilo SoundCloud Daniel Khelz" loading="lazy"></iframe>
-                    </div>
-
-                    <div class="music__col">
-                        <div class="music__head">
-                            <span class="music__label music__label--youtube">Canale YouTube</span>
-                            <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer" aria-label="Visita il canale YouTube di Daniel Khelz">
-                                Visita il canale
-                                <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14zM5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
-                            </a>
-                        </div>
-                        <div class="music__yt">
-                            <svg class="music__yt-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8M9.6 15.6V8.4L15.8 12z"/></svg>
-                            <p class="music__yt-handle">@DanielKhelz</p>
-                            <p class="music__yt-desc">Live electronics, produzioni originali, viola &amp; jazz</p>
-                            <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer" class="btn btn--youtube" aria-label="Apri il canale YouTube">
-                                Apri il canale
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <section id="musica" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+            <div class="flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-10 reveal">
+                <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter">LA MIA MUSICA</h2>
             </div>
-        </section>
 
-        <section id="formazione" class="section container">
-            <div class="bio reveal">
-                <h2 class="section__title">Formazione</h2>
-                <div class="education">
-                    <div class="education__item">
-                        <h3>Laurea in Viola</h3>
-                        <p>Conservatorio Giuseppe Verdi, Milano</p>
+            <div class="grid md:grid-cols-3 gap-8 reveal">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-blue-500 text-sm uppercase tracking-widest">PLAYLIST SPOTIFY</span>
+                        <a href="https://open.spotify.com/playlist/4oO1Q2nvfIxuNTBZfzrrqg"
+                           target="_blank" rel="noopener noreferrer"
+                           class="text-blue-500 flex items-center gap-x-2 text-sm uppercase tracking-widest hover:text-white"
+                           aria-label="Apri playlist su Spotify">
+                            APRI SU SPOTIFY
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <div class="education__item">
-                        <h3>Corso Specialistico Integrativo in Progettazione Eventi Culturali e Spettacoli dal Vivo</h3>
-                        <p>2024 • Conservatorio Giuseppe Verdi, Milano • Docente: Prof. Alessandro Daniele</p>
+                    <div class="spotify-embed">
+                        <iframe src="https://open.spotify.com/embed/playlist/4oO1Q2nvfIxuNTBZfzrrqg" width="100%" height="360" frameborder="0" allow="encrypted-media" loading="lazy" title="Playlist Spotify Daniel Khelz"></iframe>
                     </div>
-                    <div class="education__item">
-                        <h3>Laurea Triennale in Nuove Tecnologie Musicali (2023)</h3>
-                        <p>Conservatorio Giuseppe Verdi, Milano</p>
-                        <p>Specializzazione: Musica Elettronica e Tecnico del Suono</p>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-orange-500 text-sm uppercase tracking-widest">SOUNDCLOUD</span>
+                        <a href="https://soundcloud.com/daniel_khelz" target="_blank" rel="noopener noreferrer"
+                           class="text-orange-500 flex items-center gap-x-2 text-sm uppercase tracking-widest hover:text-white"
+                           aria-label="Apri profilo su SoundCloud">
+                            APRI SU SOUNDCLOUD
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="soundcloud-embed bg-neutral-900 rounded-3xl p-4 border border-white/10">
+                        <iframe width="100%" height="360" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/daniel_khelz&color=%233b82f6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="Profilo SoundCloud Daniel Khelz" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-red-500 text-sm uppercase tracking-widest">CANALE YOUTUBE</span>
+                        <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer"
+                           class="text-red-500 flex items-center gap-x-2 text-sm uppercase tracking-widest hover:text-white"
+                           aria-label="Visita il canale YouTube di Daniel Khelz">
+                            VISITA IL CANALE
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-white/10 flex flex-col items-center justify-center h-full min-h-[360px] sm:min-h-[420px] text-center">
+                        <i class="fa-brands fa-youtube text-red-500 text-6xl sm:text-8xl mb-6 sm:mb-8" aria-hidden="true"></i>
+                        <p class="text-2xl font-semibold mb-2">@DanielKhelz</p>
+                        <p class="text-neutral-400 mb-8">Live electronics, produzioni originali, viola & jazz</p>
+                        <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer"
+                           class="px-10 py-4 bg-red-600 hover:bg-red-500 text-white font-semibold rounded-3xl inline-flex items-center gap-x-3 text-lg"
+                           aria-label="Apri il canale YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                            APRI IL CANALE
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contatti" class="section section--contact">
-            <div class="container">
-                <div class="contact reveal">
+        <section id="formazione" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 border-t border-white/10">
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-12 reveal">
+                <div class="md:w-1/3">
+                    <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter">FORMAZIONE</h2>
+                </div>
+                <div class="md:w-2/3 space-y-8 md:space-y-10">
+                    <div class="flex flex-col sm:flex-row gap-y-2 sm:items-center justify-between border-b border-white/10 pb-6">
+                        <div>
+                            <h3 class="font-semibold">Laurea in Viola</h3>
+                            <p class="text-neutral-400">Conservatorio Giuseppe Verdi, Milano</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-y-2 sm:items-center justify-between border-b border-white/10 pb-6">
+                        <div>
+                            <h3 class="font-semibold">Corso Specialistico Integrativo in Progettazione Eventi Culturali e Spettacoli dal Vivo</h3>
+                            <p class="text-neutral-400">2024 • Conservatorio Giuseppe Verdi, Milano • Docente: Prof. Alessandro Daniele</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-y-2 sm:items-center justify-between border-b border-white/10 pb-6">
+                        <div>
+                            <h3 class="font-semibold">Laurea Triennale in Nuove Tecnologie Musicali (2023)</h3>
+                            <p class="text-neutral-400">Conservatorio Giuseppe Verdi, Milano</p>
+                            <p class="text-neutral-400">Specializzazione: Musica Elettronica e Tecnico del Suono</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatti" class="bg-black py-12 sm:py-16 md:py-20 lg:py-24">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-10 lg:gap-16 reveal">
                     <div>
-                        <h2 class="section__title">Contatti</h2>
-                        <div class="contact__links">
-                            <a href="mailto:danielfcalzone@gmail.com" class="contact__link" aria-label="Invia email a danielfcalzone@gmail.com">
-                                <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+                        <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter mb-8">CONTATTI</h2>
+                        <div class="space-y-8">
+                            <a href="mailto:danielfcalzone@gmail.com" class="flex items-center gap-x-6 group" aria-label="Invia email a danielfcalzone@gmail.com">
+                                <i class="fa-solid fa-envelope text-4xl text-blue-500 group-hover:scale-110" aria-hidden="true"></i>
                                 <div>
-                                    <span class="contact__label">Email</span>
-                                    <span class="contact__value">danielfcalzone@gmail.com</span>
+                                    <div class="text-sm text-neutral-400">EMAIL</div>
+                                    <div class="text-xl sm:text-2xl md:text-3xl break-all">danielfcalzone@gmail.com</div>
                                 </div>
                             </a>
-                            <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Apri Instagram @danielkheelz">
-                                <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.81s0 3.54-.07 4.81c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.81.07s-3.54 0-4.81-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.54 2.2 15.16 2.2 12s0-3.54.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.46 2.2 8.84 2.2 12 2.2m0 4.67a5.13 5.13 0 1 1 0 10.26 5.13 5.13 0 0 1 0-10.26m0 8.46a3.33 3.33 0 1 0 0-6.66 3.33 3.33 0 0 0 0 6.66m6.54-8.67a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0"/></svg>
+                            <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center gap-x-6 group" aria-label="Apri Instagram @danielkheelz">
+                                <i class="fa-brands fa-instagram text-4xl text-pink-500 group-hover:scale-110" aria-hidden="true"></i>
                                 <div>
-                                    <span class="contact__label">Instagram</span>
-                                    <span class="contact__value">@danielkheelz</span>
+                                    <div class="text-sm text-neutral-400">INSTAGRAM</div>
+                                    <div class="text-xl sm:text-2xl md:text-3xl">@danielkheelz</div>
                                 </div>
                             </a>
                         </div>
                     </div>
-
-                    <div class="contact__cta">
-                        <h3>Pronto per collaborare?</h3>
-                        <p>Live, produzioni elettroniche, eventi o studio: contattami per progetti musicali, tecnici o di direzione artistica.</p>
-                        <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--block" aria-label="Invia messaggio su Instagram">
-                            Invia messaggio
+                    <div class="bg-neutral-900 rounded-3xl p-8 md:p-10">
+                        <h3 class="text-2xl mb-8">Pronto per collaborare?</h3>
+                        <p class="text-neutral-400 mb-8">Live, produzioni elettroniche, eventi o studio: contattami per progetti musicali, tecnici o di direzione artistica.</p>
+                        <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer"
+                           class="block w-full text-center py-6 bg-blue-500 hover:bg-white text-black font-semibold text-xl rounded-3xl"
+                           aria-label="Invia messaggio su Instagram">
+                            INVIA MESSAGGIO
                         </a>
                     </div>
                 </div>
 
-                <p class="footer">© 2026 Daniel Calzone • Daniel Khelz • Tutti i diritti riservati</p>
+                <p class="text-center text-xs text-neutral-500 mt-16">
+                    © 2026 Daniel Calzone • Daniel Khelz • Tutti i diritti riservati
+                </p>
             </div>
         </section>
     </main>
 
-    <button type="button" class="scroll-top" data-scroll-top aria-label="Torna in cima alla pagina" hidden>
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 4 8 8-1.41 1.41L13 7.83V20h-2V7.83l-5.59 5.58L4 12z"/></svg>
+    <button type="button"
+            data-scroll-top
+            class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-2xl flex items-center justify-center border border-white/20 backdrop-blur-sm"
+            aria-label="Torna in cima alla pagina">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <div id="galleryModal" class="modal" role="dialog" aria-modal="true" aria-label="Visualizzatore foto" hidden>
-        <div class="modal__box" data-stop-propagation>
-            <button type="button" class="modal__close" data-close-gallery aria-label="Chiudi visualizzatore foto">&times;</button>
-            <img id="modalImage" class="modal__img" alt="">
-            <div class="modal__nav">
-                <button type="button" class="btn btn--ghost btn--sm" data-prev-gallery aria-label="Foto precedente">
-                    <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 20-8-8 8-8 1.41 1.41L7.83 11H20v2H7.83l5.58 5.59z"/></svg>
-                    <span>Precedente</span>
+    <div id="galleryModal" class="hidden fixed inset-0 z-[100] bg-black/95 items-center justify-center p-4 md:p-8" role="dialog" aria-modal="true" aria-label="Visualizzatore foto">
+        <div class="relative max-w-5xl w-full" data-stop-propagation>
+            <button type="button" data-close-gallery
+                    class="absolute -top-10 right-1 md:right-0 text-white/70 hover:text-white text-4xl leading-none transition-colors z-10"
+                    aria-label="Chiudi visualizzatore foto">&times;</button>
+
+            <img id="modalImage"
+                 class="max-h-[88vh] w-auto mx-auto rounded-2xl shadow-2xl border border-white/10 object-contain"
+                 alt="">
+
+            <div class="flex justify-center gap-x-3 sm:gap-x-4 mt-4">
+                <button type="button" data-prev-gallery
+                        class="px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-white rounded-3xl flex items-center gap-x-2 transition-colors"
+                        aria-label="Foto precedente">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span class="hidden sm:inline">PRECEDENTE</span>
                 </button>
-                <button type="button" class="btn btn--ghost btn--sm" data-next-gallery aria-label="Foto successiva">
-                    <span>Successiva</span>
-                    <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 4 8 8-8 8-1.41-1.41L16.17 13H4v-2h12.17l-5.58-5.59z"/></svg>
+                <button type="button" data-next-gallery
+                        class="px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-white rounded-3xl flex items-center gap-x-2 transition-colors"
+                        aria-label="Foto successiva">
+                    <span class="hidden sm:inline">SUCCESSIVA</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </div>
 
-    <div id="videoModal" class="modal modal--video" role="dialog" aria-modal="true" aria-label="Riproduttore video" hidden>
-        <div class="modal__box" data-stop-propagation>
-            <button type="button" class="modal__close" data-close-video aria-label="Chiudi riproduttore video">&times;</button>
-            <video id="modalVideo" class="modal__video" controls playsinline preload="metadata"></video>
+    <div id="videoModal" class="hidden fixed inset-0 z-[110] bg-black/95 items-center justify-center p-4 md:p-8" role="dialog" aria-modal="true" aria-label="Riproduttore video">
+        <div class="relative max-w-5xl w-full" data-stop-propagation>
+            <button type="button" data-close-video
+                    class="absolute -top-10 right-1 md:right-0 text-white/70 hover:text-white text-4xl leading-none transition-colors z-10"
+                    aria-label="Chiudi riproduttore video">&times;</button>
+
+            <video id="modalVideo"
+                   class="w-full max-h-[85vh] rounded-2xl shadow-2xl border border-white/10 bg-black"
+                   controls playsinline preload="metadata"></video>
         </div>
     </div>
 

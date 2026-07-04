@@ -2,8 +2,8 @@
     'use strict';
 
     const galleryImages = [
-        'images/photo1.jpg',
-        'images/photo2.jpg'
+        { src: 'images/photo1.jpg', alt: 'Daniel Khelz in maglietta nera con cuffie mentre mixa su controller Pioneer in studio con muro di mattoni a vista' },
+        { src: 'images/photo2.jpg', alt: 'Daniel Khelz in completo nero con cuffie mentre mixa in elegante bar con scaffali pieni di bottiglie di liquori' }
     ];
 
     const galleryVideos = [
@@ -26,14 +26,26 @@
         menu.classList.toggle('hidden', isOpen);
         button?.setAttribute('aria-expanded', String(!isOpen));
         icon?.classList.toggle('open', !isOpen);
+        document.body.classList.toggle('modal-open', !isOpen);
+    }
+
+    function closeMobileMenu() {
+        const menu = $('#mobileMenu');
+        const button = $('button[aria-controls="mobileMenu"]');
+        menu?.classList.remove('open');
+        menu?.classList.add('hidden');
+        button?.setAttribute('aria-expanded', 'false');
+        button?.querySelector('.hamburger-icon')?.classList.remove('open');
+        document.body.classList.remove('modal-open');
     }
 
     function openGalleryModal(index) {
         currentGalleryIndex = index;
         const modal = $('#galleryModal');
         const img = $('#modalImage');
-        img.src = galleryImages[index];
-        img.alt = img.closest('[data-alt]')?.dataset.alt || 'Foto galleria Daniel Khelz';
+        const item = galleryImages[index];
+        img.src = item.src;
+        img.alt = item.alt;
         modal.classList.remove('hidden');
         modal.classList.add('flex');
         document.body.classList.add('modal-open');
@@ -49,13 +61,19 @@
     function prevGalleryImage(e) {
         e?.stopImmediatePropagation();
         currentGalleryIndex = (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
-        $('#modalImage').src = galleryImages[currentGalleryIndex];
+        const item = galleryImages[currentGalleryIndex];
+        const img = $('#modalImage');
+        img.src = item.src;
+        img.alt = item.alt;
     }
 
     function nextGalleryImage(e) {
         e?.stopImmediatePropagation();
         currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
-        $('#modalImage').src = galleryImages[currentGalleryIndex];
+        const item = galleryImages[currentGalleryIndex];
+        const img = $('#modalImage');
+        img.src = item.src;
+        img.alt = item.alt;
     }
 
     function openVideoModal(index) {
@@ -106,7 +124,7 @@
                     }
                 });
             },
-            { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+            { rootMargin: '-35% 0px -55% 0px', threshold: 0 }
         );
 
         sections.forEach((section) => observer.observe(section));
@@ -125,7 +143,7 @@
                     }
                 });
             },
-            { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+            { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
         );
 
         elements.forEach((el) => observer.observe(el));
@@ -134,6 +152,9 @@
     function initPreviewVideos() {
         const previews = $$('.preview-video');
         if (!previews.length) return;
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -146,10 +167,34 @@
                     }
                 });
             },
-            { threshold: 0.25 }
+            { threshold: 0.3 }
         );
 
         previews.forEach((video) => observer.observe(video));
+    }
+
+    function initNavScroll() {
+        const nav = $('.site-nav');
+        const scrollTop = $('[data-scroll-top]');
+        if (!nav) return;
+
+        let ticking = false;
+
+        function onScroll() {
+            const y = window.scrollY;
+            nav.classList.toggle('scrolled', y > 40);
+            scrollTop?.classList.toggle('visible', y > 500);
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(onScroll);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        onScroll();
     }
 
     function initKeyboardNav() {
@@ -162,7 +207,7 @@
                 else if (!imgModal.classList.contains('hidden')) closeGalleryModal();
                 else {
                     const menu = $('#mobileMenu');
-                    if (menu?.classList.contains('open')) toggleMobileMenu();
+                    if (menu?.classList.contains('open')) closeMobileMenu();
                 }
             }
 
@@ -204,14 +249,7 @@
     function initEventListeners() {
         $('button[aria-controls="mobileMenu"]')?.addEventListener('click', toggleMobileMenu);
         $$('#mobileMenu a').forEach((link) => {
-            link.addEventListener('click', () => {
-                const menu = $('#mobileMenu');
-                const button = $('button[aria-controls="mobileMenu"]');
-                menu.classList.remove('open');
-                menu.classList.add('hidden');
-                button?.setAttribute('aria-expanded', 'false');
-                button?.querySelector('.hamburger-icon')?.classList.remove('open');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
 
         $('#galleryModal')?.addEventListener('click', closeGalleryModal);
@@ -227,6 +265,10 @@
         $('[data-scroll-top]')?.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) closeMobileMenu();
+        });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -236,5 +278,6 @@
         initRevealAnimations();
         initPreviewVideos();
         initKeyboardNav();
+        initNavScroll();
     });
 })();

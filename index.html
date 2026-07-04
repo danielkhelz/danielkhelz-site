@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Daniel Khelz (Daniel Calzone) - Violista Professionista, DJ & Producer, Tecnico Audio, Stage Manager. Conservatorio Giuseppe Verdi Milano.">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="author" content="Daniel Khelz">
@@ -53,8 +53,8 @@
 <body class="bg-neutral-950 text-white">
     <a href="#main" class="skip-link">Salta al contenuto</a>
 
-    <nav class="bg-black/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50" role="navigation" aria-label="Navigazione principale">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between gap-4">
+    <nav class="site-nav bg-black/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50" role="navigation" aria-label="Navigazione principale">
+        <div class="nav-inner max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between gap-4">
             <a href="#" class="heading-font text-xl sm:text-2xl md:text-3xl tracking-tighter brand-link shrink-0" aria-label="Daniel Khelz - Home">DANIEL KHELZ</a>
 
             <div class="hidden md:flex items-center gap-x-8 lg:gap-x-10 text-sm uppercase tracking-widest font-medium">
@@ -104,10 +104,10 @@
     </nav>
 
     <main id="main">
-        <header id="hero" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <header id="hero" class="hero-bg min-h-[100dvh] flex items-center relative overflow-hidden">
+            <div class="hero-content max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
                 <div class="max-w-2xl mx-auto text-center reveal">
-                    <div class="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-2 bg-white/10 text-blue-500 text-xs font-mono tracking-[2px] px-4 sm:px-5 py-2 rounded-3xl">
+                    <div class="hero-badge inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-2 bg-white/10 text-blue-500 text-xs font-mono tracking-[2px] px-4 sm:px-5 py-2 rounded-3xl">
                         <div class="w-2 h-2 bg-blue-500 rounded-full pulsing-dot" aria-hidden="true"></div>
                         MILANO
                         <div class="w-2 h-2 bg-blue-500 rounded-full pulsing-dot" aria-hidden="true"></div>
@@ -126,24 +126,24 @@
                         Tecnico Audio & Stage Manager.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row items-center gap-4 mt-12 justify-center">
+                    <div class="hero-cta flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-10 sm:mt-12 justify-center">
                         <a href="#musica"
-                           class="w-full sm:w-auto px-8 py-5 bg-white text-black font-semibold rounded-3xl text-lg flex items-center justify-center gap-x-3 hover:scale-105 focus:scale-105"
+                           class="btn-primary w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg flex items-center justify-center gap-x-3"
                            aria-label="Ascolta la mia musica">
                             <i class="fa-solid fa-headphones" aria-hidden="true"></i>
                             ASCOLTA LA MIA MUSICA
                         </a>
                         <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer"
-                           class="w-full sm:w-auto px-8 py-5 border border-white/30 hover:border-blue-500 rounded-3xl text-lg flex items-center justify-center gap-x-3"
+                           class="btn-outline w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg flex items-center justify-center gap-x-3"
                            aria-label="Visita il canale YouTube">
                             <i class="fa-brands fa-youtube text-red-500" aria-hidden="true"></i>
-                            CANALE YOUTUBE
+                            YOUTUBE
                         </a>
                         <a href="#esperienze"
-                           class="w-full sm:w-auto px-8 py-5 border border-white/30 hover:border-blue-500 rounded-3xl text-lg flex items-center justify-center gap-x-3"
+                           class="btn-outline w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg flex items-center justify-center gap-x-3"
                            aria-label="Vedi i prossimi live e esperienze">
                             <i class="fa-solid fa-ticket" aria-hidden="true"></i>
-                            PROSSIMI LIVE
+                            ESPERIENZE
                         </a>
                     </div>
 
@@ -185,8 +185,8 @@
                 <div class="reveal">
                     <h3 class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest mb-6">ESPERIENZE ORCHESTRALI</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Prima Viola</h4>
                                     <p class="text-blue-500">Verdi Jazz Orchestra</p>
@@ -196,8 +196,8 @@
                             <p class="text-neutral-300">Ruolo di sezione leader nella viola all'interno di formazione jazz sinfonica. Esecuzioni regolari in contesti di alta qualità artistica.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violista</h4>
                                     <p class="text-blue-500">Orchestra Conservatorio Giuseppe Verdi Milano</p>
@@ -207,8 +207,8 @@
                             <p class="text-neutral-300">Collaborazione continuativa con l'orchestra del Conservatorio. Partecipazione a stagioni concertistiche e produzioni teatrali.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Prima Viola</h4>
                                     <p class="text-blue-500">Abbazia Jazz Festival</p>
@@ -218,8 +218,8 @@
                             <p class="text-neutral-300">Concerto con David Weckl e il pianista Antonio Farò. Performance in contesto di festival prestigioso.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Prima Viola</h4>
                                     <p class="text-blue-500">Mondaino Youth Orchestra</p>
@@ -229,8 +229,8 @@
                             <p class="text-neutral-300">Concerto con Stevie Biondi e Simona Bencini (cantante dei Dirotta su Cuba). Esperienza in orchestra giovanile di eccellenza.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violista</h4>
                                     <p class="text-blue-500">Monferrato Classic Orchestra</p>
@@ -240,8 +240,8 @@
                             <p class="text-neutral-300">Partecipazione a produzioni orchestrali regionali.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violista</h4>
                                     <p class="text-blue-500">Orchestra GD Major</p>
@@ -251,8 +251,8 @@
                             <p class="text-neutral-300">Esibizione alla Fashion Week di Roma. Collaborazione con eventi fashion e culturali di alto profilo.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violista</h4>
                                     <p class="text-blue-500">FuturOrchestra</p>
@@ -262,8 +262,8 @@
                             <p class="text-neutral-300">Orchestra del Teatro Dal Verme di Milano. Esperienza formativa in contesto professionale milanese.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violinista e Violista di Fila</h4>
                                     <p class="text-blue-500">Orchestra ICM Milano</p>
@@ -278,8 +278,8 @@
                 <div class="reveal">
                     <h3 class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest mb-6">QUARTETTI E COLLABORAZIONI DA CAMERA</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violista</h4>
                                     <p class="text-blue-500">Sunrise Jazz String Quartet</p>
@@ -289,8 +289,8 @@
                             <p class="text-neutral-300">Collaborazioni con Cinzia Tedesco e Pino Iodice. Repertorio jazz e crossover.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violista</h4>
                                     <p class="text-blue-500">"Mister Puccini in Jazz"</p>
@@ -300,8 +300,8 @@
                             <p class="text-neutral-300">Performance con il Sunrise Jazz String Quartet e la cantante Cinzia Tedesco all'Auditorium Parco della Musica.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Violista</h4>
                                     <p class="text-blue-500">Tour "Michael - The Show"</p>
@@ -311,8 +311,8 @@
                             <p class="text-neutral-300">Tournée nazionale con Jonathan Moffett e Jennifer Batten. Gestione di performance live ad alto livello tecnico.</p>
                         </article>
 
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">Viola</h4>
                                     <p class="text-blue-500">Davide Cabiddu's Quartet</p>
@@ -327,8 +327,8 @@
                 <div class="reveal">
                     <h3 class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest mb-6">DJ & LIVE ELECTRONICS</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <article class="card-hover bg-neutral-800 border border-white/10 rounded-3xl p-8">
-                            <div class="flex justify-between items-start mb-6 gap-4">
+                        <article class="experience-card card-hover bg-neutral-800 border border-white/10 rounded-3xl p-6 sm:p-8">
+                            <div class="card-header flex justify-between items-start mb-4 sm:mb-6 gap-4">
                                 <div>
                                     <h4 class="font-semibold text-lg">DJ • Daniel Khelz</h4>
                                     <p class="text-blue-500">Vari club Milano e party privati</p>
@@ -348,9 +348,9 @@
                 <span class="text-blue-500 text-xs sm:text-sm uppercase tracking-widest">PERFORMANCE & RITRATTI</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 reveal">
                 <div data-gallery-index="0"
-                     class="group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-neutral-900"
+                     class="gallery-item group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-neutral-900"
                      role="button"
                      tabindex="0"
                      aria-label="Apri foto in grande: Daniel Khelz in studio">
@@ -360,12 +360,13 @@
                          loading="lazy"
                          width="800"
                          height="600">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand text-white text-sm"></i></div>
                     <div class="absolute bottom-4 left-4 media-caption">IN STUDIO • LIVE ELECTRONICS</div>
                 </div>
 
                 <div data-gallery-index="1"
-                     class="group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-neutral-900"
+                     class="gallery-item group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-neutral-900"
                      role="button"
                      tabindex="0"
                      aria-label="Apri foto in grande: Daniel Khelz in smoking al mixer in bar elegante">
@@ -375,7 +376,8 @@
                          loading="lazy"
                          width="800"
                          height="600">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand text-white text-sm"></i></div>
                     <div class="absolute bottom-4 left-4 media-caption">DJ SET • LOCATION ESCLUSIVA</div>
                 </div>
             </div>
@@ -386,7 +388,7 @@
                     <div class="flex-1 h-px bg-white/10"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div data-video-index="0"
                          class="group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer card-hover bg-black"
                          role="button"
@@ -396,8 +398,9 @@
                                class="preview-video w-full aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
                                muted loop playsinline preload="metadata"
                                aria-label="Anteprima video: DJ set live con controller Pioneer in ambiente club"></video>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 media-caption">DJ SET LIVE • CLUB</div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                        <div class="play-overlay" aria-hidden="true"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                        <div class="absolute bottom-4 left-4 media-caption z-[3]">DJ SET LIVE • CLUB</div>
                     </div>
 
                     <div data-video-index="1"
@@ -409,7 +412,9 @@
                                class="preview-video w-full aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
                                muted loop playsinline preload="metadata"
                                aria-label="Anteprima video: Reel artistico con luci e performance"></video>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                        <div class="play-overlay" aria-hidden="true"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                        <div class="absolute bottom-4 left-4 media-caption z-[3]">REEL ARTISTICO</div>
                     </div>
                 </div>
             </div>
@@ -422,7 +427,7 @@
                 <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter">LA MIA MUSICA</h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 reveal">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-blue-500 text-sm uppercase tracking-widest">PLAYLIST SPOTIFY</span>
@@ -541,9 +546,28 @@
                     </div>
                 </div>
 
-                <p class="text-center text-xs text-neutral-500 mt-16">
-                    © 2026 Daniel Calzone • Daniel Khelz • Tutti i diritti riservati
-                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mt-16 pt-8 border-t border-white/10">
+                    <p class="text-xs text-neutral-500 text-center sm:text-left">
+                        © 2026 Daniel Calzone • Daniel Khelz • Tutti i diritti riservati
+                    </p>
+                    <div class="footer-social flex items-center gap-3">
+                        <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-pink-400" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@DanielKhelz" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-red-500" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://soundcloud.com/daniel_khelz" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
+                            <i class="fa-brands fa-soundcloud text-orange-400" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://open.spotify.com/playlist/4oO1Q2nvfIxuNTBZfzrrqg" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+                            <i class="fa-brands fa-spotify text-green-500" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:danielfcalzone@gmail.com" aria-label="Email">
+                            <i class="fa-solid fa-envelope text-blue-400" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

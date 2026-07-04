@@ -143,26 +143,8 @@ body {
     50% { background-position: 100% 50%; }
 }
 
-.hero-logo {
-    display: flex;
-    justify-content: center;
-    line-height: 0;
-}
-
-.hero-logo-frame {
-    display: block;
-    overflow: hidden;
-    width: min(90vw, 520px);
-    height: clamp(110px, 20vw, 190px);
-    border-radius: 0.5rem;
-}
-
-.hero-logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 52%;
-    filter: drop-shadow(0 0 40px rgb(59 130 246 / 0.1));
+.hero-h1 {
+    text-shadow: 0 0 60px rgb(59 130 246 / 0.15);
 }
 
 /* ── Sections ── */

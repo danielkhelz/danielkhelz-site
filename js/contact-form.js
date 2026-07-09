@@ -1,21 +1,14 @@
 (function () {
     'use strict';
 
+    const FORM_ENDPOINT = '/api/contact';
+
     const SERVICE_LABELS = {
         violista: 'Violista',
         dj: 'DJ',
         producer: 'Producer',
         stage_manager: 'Stage Manager',
         tecnico_suono: 'Tecnico del suono'
-    };
-
-    const EVENT_LABELS = {
-        concerto: 'Concerto',
-        evento_privato: 'Evento privato',
-        festival: 'Festival',
-        registrazione: 'Registrazione in studio',
-        corporate: 'Evento corporate',
-        altro: 'Altro'
     };
 
     function showStatus(form, type, message) {
@@ -47,93 +40,85 @@
         if (loadingLabel) loadingLabel.hidden = !loading;
     }
 
-    function validateForm(form) {
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        hideStatus(form);
+
+        if (form.querySelector('[name="_gotcha"]')?.value) {
+            return;
+        }
+
         const servizi = getSelectedServices(form);
         const privacy = form.querySelector('[name="privacy"]');
 
         if (!form.nome.value.trim()) {
             showStatus(form, 'error', 'Inserisci il tuo nome.');
-            return false;
+            return;
         }
 
         if (!form.email.value.trim() || !form.email.checkValidity()) {
             showStatus(form, 'error', 'Inserisci un indirizzo email valido.');
-            return false;
+            return;
         }
 
         if (!servizi.length) {
             showStatus(form, 'error', 'Seleziona almeno un servizio richiesto.');
-            return false;
+            return;
         }
 
         if (!form.messaggio.value.trim() || form.messaggio.value.trim().length < 10) {
             showStatus(form, 'error', 'Il messaggio deve contenere almeno 10 caratteri.');
-            return false;
+            return;
         }
 
         if (!privacy?.checked) {
             showStatus(form, 'error', 'Devi accettare l\'informativa privacy.');
-            return false;
-        }
-
-        return true;
-    }
-
-    function prepareFormData(form) {
-        const servizi = getSelectedServices(form)
-            .map((key) => SERVICE_LABELS[key] || key)
-            .join(', ');
-
-        const serviziField = form.querySelector('#serviziRichiesti');
-        if (serviziField) serviziField.value = servizi;
-
-        const tipoEvento = form.tipo_evento.value;
-        const tipoLabel = EVENT_LABELS[tipoEvento] || tipoEvento || 'Non specificato';
-
-        let tipoInput = form.querySelector('input[name="tipo_evento_label"]');
-        if (!tipoInput) {
-            tipoInput = document.createElement('input');
-            tipoInput.type = 'hidden';
-            tipoInput.name = 'tipo_evento_label';
-            form.appendChild(tipoInput);
-        }
-        tipoInput.value = tipoLabel;
-    }
-
-    function handleSubmit(event) {
-        const form = event.currentTarget;
-        hideStatus(form);
-
-        if (form.querySelector('[name="_honey"]')?.value) {
-            event.preventDefault();
             return;
         }
 
-        if (!validateForm(form)) {
-            event.preventDefault();
-            return;
-        }
+        const payload = {
+            nome: form.nome.value.trim(),
+            email: form.email.value.trim(),
+            telefono: form.telefono.value.trim(),
+            servizi,
+            tipo_evento: form.tipo_evento.value,
+            data_evento: form.data_evento.value,
+            luogo: form.luogo.value.trim(),
+            messaggio: form.messaggio.value.trim(),
+            privacy: true
+        };
 
-        prepareFormData(form);
         setLoading(form, true);
-    }
 
-    function handleSuccessRedirect() {
-        const params = new URLSearchParams(window.location.search);
-        if (!params.has('inviato')) return;
+        try {
+            const response = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
 
-        const form = document.getElementById('quoteForm');
-        if (form) {
+            const data = await response.json().catch(() => ({}));
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Invio non riuscito. Riprova.');
+            }
+
+            form.reset();
             showStatus(form, 'success', 'Richiesta inviata con successo. Ti risponderò al più presto.');
+        } catch (err) {
+            showStatus(form, 'error', err.message || 'Errore di connessione. Riprova o scrivi a danielcalzonelive@gmail.com.');
+        } finally {
+            setLoading(form, false);
         }
-
-        const cleanUrl = window.location.pathname + window.location.hash;
-        window.history.replaceState({}, '', cleanUrl);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('quoteForm');
         form?.addEventListener('submit', handleSubmit);
-        handleSuccessRedirect();
     });
 })();

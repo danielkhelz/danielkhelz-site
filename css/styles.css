@@ -569,6 +569,121 @@ button:focus-visible,
     box-shadow: 0 0 0 1px rgb(59 130 246 / 0.15), 0 16px 40px -12px var(--primary-glow);
 }
 
+.project-block + .project-block {
+    margin-top: 0;
+}
+
+.project-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgb(255 255 255 / 0.15), transparent);
+    margin: 4rem 0;
+}
+
+.release-badge-published {
+    background: rgb(34 197 94 / 0.1);
+    border-color: rgb(34 197 94 / 0.35);
+}
+
+.release-badge-published .release-badge-label {
+    color: #4ade80;
+}
+
+.album-actions {
+    padding-top: 0.25rem;
+}
+
+.album-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1.5rem;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.album-btn-spotify {
+    background: #1db954;
+    color: #000000;
+    border: 1px solid #1db954;
+}
+
+.album-btn-spotify:hover {
+    background: #1ed760;
+    transform: scale(1.03);
+}
+
+.album-btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgb(255 255 255 / 0.3);
+}
+
+.album-btn-outline:hover {
+    border-color: var(--primary);
+    background: rgb(59 130 246 / 0.1);
+}
+
+.tracklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 1.25rem;
+    overflow: hidden;
+}
+
+.tracklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid rgb(255 255 255 / 0.06);
+    transition: background 0.2s ease;
+}
+
+.tracklist-item:last-child {
+    border-bottom: none;
+}
+
+.tracklist-item:hover {
+    background: rgb(255 255 255 / 0.04);
+}
+
+.track-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 1.5rem;
+    padding-top: 0.15rem;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.track-title {
+    color: #e5e5e5;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.track-artist {
+    color: #737373;
+    font-size: 0.8rem;
+}
+
+.album-embed iframe {
+    min-height: 480px;
+}
+
 /* ── Legal pages ── */
 .legal-content h2 {
     font-family: 'Space Grotesk', sans-serif;

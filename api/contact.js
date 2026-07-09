@@ -1,6 +1,7 @@
 const { Resend } = require('resend');
 
-const TO_EMAIL = 'danielcalzonelive@gmail.com';
+const LIVE_EMAIL = 'danielcalzonelive@gmail.com';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'danielfcalzone@gmail.com';
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Sito Daniel Khelz <onboarding@resend.dev>';
 
 const SERVICE_LABELS = {
@@ -100,6 +101,7 @@ module.exports = async (req, res) => {
 
         const html = `
             <h2>Nuova richiesta preventivo — Daniel Khelz</h2>
+            <p style="color:#555;font-size:14px;">Richiesta eventi/live · ${escapeHtml(LIVE_EMAIL)}</p>
             <table style="border-collapse:collapse;width:100%;max-width:600px;">
                 <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Nome</strong></td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(nome)}</td></tr>
                 <tr><td style="padding:8px;border:1px solid #ddd;"><strong>Email</strong></td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(email)}</td></tr>

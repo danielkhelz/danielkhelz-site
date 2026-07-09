@@ -37,7 +37,7 @@
         "name": "Daniel Khelz",
         "alternateName": "Daniel Calzone",
         "jobTitle": ["Violista", "DJ", "Producer", "Tecnico Audio"],
-        "url": "https://danielkhelz.com",
+        "url": "https://danielkhelz-site.vercel.app",
         "email": "danielfcalzone@gmail.com",
         "sameAs": [
             "https://www.instagram.com/danielkheelz/",
@@ -442,8 +442,8 @@
                             <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
                     </div>
-                    <div class="spotify-embed">
-                        <iframe src="https://open.spotify.com/embed/playlist/4oO1Q2nvfIxuNTBZfzrrqg" width="100%" height="360" frameborder="0" allow="encrypted-media" loading="lazy" title="Playlist Spotify Daniel Khelz"></iframe>
+                    <div class="spotify-embed" data-embed-container data-embed-label="Spotify" data-embed-url="https://open.spotify.com/playlist/4oO1Q2nvfIxuNTBZfzrrqg">
+                        <iframe data-embed-src="https://open.spotify.com/embed/playlist/4oO1Q2nvfIxuNTBZfzrrqg" width="100%" height="360" frameborder="0" allow="encrypted-media" loading="lazy" title="Playlist Spotify Daniel Khelz"></iframe>
                     </div>
                 </div>
 
@@ -457,8 +457,8 @@
                             <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
                     </div>
-                    <div class="soundcloud-embed bg-neutral-900 rounded-3xl p-4 border border-white/10">
-                        <iframe width="100%" height="360" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/daniel_khelz&color=%233b82f6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="Profilo SoundCloud Daniel Khelz" loading="lazy"></iframe>
+                    <div class="soundcloud-embed bg-neutral-900 rounded-3xl p-4 border border-white/10" data-embed-container data-embed-label="SoundCloud" data-embed-url="https://soundcloud.com/daniel_khelz">
+                        <iframe width="100%" height="360" scrolling="no" frameborder="no" allow="autoplay" data-embed-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/daniel_khelz&color=%233b82f6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="Profilo SoundCloud Daniel Khelz" loading="lazy"></iframe>
                     </div>
                 </div>
 
@@ -550,9 +550,17 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mt-16 pt-8 border-t border-white/10">
-                    <p class="text-xs text-neutral-500 text-center sm:text-left">
-                        © 2026 Daniel Calzone • Daniel Khelz • Tutti i diritti riservati
-                    </p>
+                    <div class="text-center sm:text-left">
+                        <p class="text-xs text-neutral-500">
+                            © 2026 Daniel Calzone • Daniel Khelz • Tutti i diritti riservati
+                        </p>
+                        <nav class="footer-legal flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 mt-3 text-xs uppercase tracking-widest" aria-label="Link legali">
+                            <a href="privacy.html" class="text-neutral-400 hover:text-white">Privacy</a>
+                            <a href="cookie.html" class="text-neutral-400 hover:text-white">Cookie</a>
+                            <a href="termini.html" class="text-neutral-400 hover:text-white">Termini</a>
+                            <button type="button" data-cookie-reset class="text-neutral-400 hover:text-white cursor-pointer bg-transparent border-0 p-0 uppercase tracking-widest text-xs">Preferenze cookie</button>
+                        </nav>
+                    </div>
                     <div class="footer-social flex items-center gap-3">
                         <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <i class="fa-brands fa-instagram text-pink-400" aria-hidden="true"></i>
@@ -621,6 +629,20 @@
         </div>
     </div>
 
+    <div id="cookieBanner" class="cookie-banner hidden" role="dialog" aria-labelledby="cookieBannerTitle" aria-describedby="cookieBannerDesc">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                <p id="cookieBannerTitle" class="cookie-banner-title">Utilizzo dei cookie</p>
+                <p id="cookieBannerDesc" class="cookie-banner-desc">Usiamo cookie tecnici e, solo con il tuo consenso, contenuti di terze parti (Spotify, SoundCloud, YouTube). <a href="cookie.html">Maggiori informazioni</a></p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button type="button" data-cookie-reject class="cookie-btn cookie-btn-outline">Solo necessari</button>
+                <button type="button" data-cookie-accept class="cookie-btn cookie-btn-primary">Accetta tutti</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cookie-consent.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>

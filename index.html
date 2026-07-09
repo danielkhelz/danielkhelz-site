@@ -858,10 +858,16 @@
                             <h3 class="text-2xl sm:text-3xl heading-font tracking-tight mb-2">Richiedi un preventivo</h3>
                             <p class="text-neutral-400 mb-8">Compila il modulo per eventi, concerti e collaborazioni professionali.</p>
 
-                            <form id="quoteForm" class="quote-form" novalidate>
+                            <form id="quoteForm" class="quote-form" action="https://formsubmit.co/danielcalzonelive@gmail.com" method="POST" novalidate>
+                                <input type="hidden" name="_subject" value="Preventivo evento — Daniel Khelz">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_next" value="https://danielkhelz-site.vercel.app/?inviato=1#contatti">
+                                <input type="hidden" name="_autoresponse" value="Grazie per la richiesta. Ho ricevuto il tuo messaggio e ti risponderò al più presto.">
+                                <input type="hidden" name="servizi_richiesti" id="serviziRichiesti" value="">
                                 <div class="form-honeypot" aria-hidden="true">
                                     <label for="gotcha">Non compilare</label>
-                                    <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+                                    <input type="text" id="gotcha" name="_honey" tabindex="-1" autocomplete="off">
                                 </div>
 
                                 <div class="form-grid">

@@ -1,8 +1,22 @@
 (function () {
     'use strict';
 
-    const FORM_ENDPOINT = '/api/contact';
-    const FALLBACK_EMAIL = 'danielcalzonelive@gmail.com';
+    const SERVICE_LABELS = {
+        violista: 'Violista',
+        dj: 'DJ',
+        producer: 'Producer',
+        stage_manager: 'Stage Manager',
+        tecnico_suono: 'Tecnico del suono'
+    };
+
+    const EVENT_LABELS = {
+        concerto: 'Concerto',
+        evento_privato: 'Evento privato',
+        festival: 'Festival',
+        registrazione: 'Registrazione in studio',
+        corporate: 'Evento corporate',
+        altro: 'Altro'
+    };
 
     function showStatus(form, type, message) {
         const status = form.querySelector('[data-form-status]');
@@ -27,134 +41,99 @@
         if (!btn) return;
 
         btn.disabled = loading;
-        btn.classList.toggle('is-loading', loading);
-
         const label = btn.querySelector('[data-btn-label]');
         const loadingLabel = btn.querySelector('[data-btn-loading]');
         if (label) label.hidden = loading;
         if (loadingLabel) loadingLabel.hidden = !loading;
     }
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-
-        const form = event.currentTarget;
-        hideStatus(form);
-
-        const honeypot = form.querySelector('[name="_gotcha"]');
-        if (honeypot && honeypot.value) {
-            return;
-        }
-
+    function validateForm(form) {
         const servizi = getSelectedServices(form);
         const privacy = form.querySelector('[name="privacy"]');
 
+        if (!form.nome.value.trim()) {
+            showStatus(form, 'error', 'Inserisci il tuo nome.');
+            return false;
+        }
+
+        if (!form.email.value.trim() || !form.email.checkValidity()) {
+            showStatus(form, 'error', 'Inserisci un indirizzo email valido.');
+            return false;
+        }
+
         if (!servizi.length) {
             showStatus(form, 'error', 'Seleziona almeno un servizio richiesto.');
-            return;
+            return false;
+        }
+
+        if (!form.messaggio.value.trim() || form.messaggio.value.trim().length < 10) {
+            showStatus(form, 'error', 'Il messaggio deve contenere almeno 10 caratteri.');
+            return false;
         }
 
         if (!privacy?.checked) {
             showStatus(form, 'error', 'Devi accettare l\'informativa privacy.');
+            return false;
+        }
+
+        return true;
+    }
+
+    function prepareFormData(form) {
+        const servizi = getSelectedServices(form)
+            .map((key) => SERVICE_LABELS[key] || key)
+            .join(', ');
+
+        const serviziField = form.querySelector('#serviziRichiesti');
+        if (serviziField) serviziField.value = servizi;
+
+        const tipoEvento = form.tipo_evento.value;
+        const tipoLabel = EVENT_LABELS[tipoEvento] || tipoEvento || 'Non specificato';
+
+        let tipoInput = form.querySelector('input[name="tipo_evento_label"]');
+        if (!tipoInput) {
+            tipoInput = document.createElement('input');
+            tipoInput.type = 'hidden';
+            tipoInput.name = 'tipo_evento_label';
+            form.appendChild(tipoInput);
+        }
+        tipoInput.value = tipoLabel;
+    }
+
+    function handleSubmit(event) {
+        const form = event.currentTarget;
+        hideStatus(form);
+
+        if (form.querySelector('[name="_honey"]')?.value) {
+            event.preventDefault();
             return;
         }
 
-        const payload = {
-            nome: form.nome.value.trim(),
-            email: form.email.value.trim(),
-            telefono: form.telefono.value.trim(),
-            servizi,
-            tipo_evento: form.tipo_evento.value,
-            data_evento: form.data_evento.value,
-            luogo: form.luogo.value.trim(),
-            messaggio: form.messaggio.value.trim(),
-            privacy: true,
-            _gotcha: ''
-        };
+        if (!validateForm(form)) {
+            event.preventDefault();
+            return;
+        }
 
+        prepareFormData(form);
         setLoading(form, true);
-
-        try {
-            let delivered = false;
-
-            try {
-                const sent = await submitPrimary(payload);
-                if (sent.ok) {
-                    delivered = true;
-                } else if (![503, 404, 500].includes(sent.status)) {
-                    throw new Error(sent.error || 'Invio non riuscito. Riprova.');
-                }
-            } catch (primaryErr) {
-                if (primaryErr.message && !primaryErr.message.includes('fetch')) {
-                    throw primaryErr;
-                }
-            }
-
-            if (!delivered) {
-                await submitFallback(payload);
-            }
-
-            form.reset();
-            showStatus(form, 'success', 'Richiesta inviata. Ti risponderò al più presto.');
-        } catch (err) {
-            showStatus(form, 'error', err.message || 'Errore di connessione. Riprova o scrivi a ' + FALLBACK_EMAIL + '.');
-        } finally {
-            setLoading(form, false);
-        }
     }
 
-    async function submitPrimary(payload) {
-        const response = await fetch(FORM_ENDPOINT, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
+    function handleSuccessRedirect() {
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has('inviato')) return;
 
-        const data = await response.json().catch(() => ({}));
-
-        return {
-            ok: response.ok,
-            status: response.status,
-            error: data.error
-        };
-    }
-
-    async function submitFallback(payload) {
-        const serviziLabel = payload.servizi.join(', ');
-
-        const response = await fetch('https://formsubmit.co/ajax/' + FALLBACK_EMAIL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                _subject: 'Preventivo evento — ' + payload.nome,
-                _template: 'table',
-                _captcha: 'false',
-                Nome: payload.nome,
-                Email: payload.email,
-                Telefono: payload.telefono || '—',
-                Servizi: serviziLabel,
-                'Tipo evento': payload.tipo_evento || '—',
-                'Data evento': payload.data_evento || '—',
-                Luogo: payload.luogo || '—',
-                Messaggio: payload.messaggio
-            })
-        });
-
-        const data = await response.json().catch(() => ({}));
-
-        if (!response.ok) {
-            throw new Error(data.message || 'Invio non riuscito. Riprova.');
+        const form = document.getElementById('quoteForm');
+        if (form) {
+            showStatus(form, 'success', 'Richiesta inviata con successo. Ti risponderò al più presto.');
         }
+
+        const cleanUrl = window.location.pathname + window.location.hash;
+        window.history.replaceState({}, '', cleanUrl);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('quoteForm');
         form?.addEventListener('submit', handleSubmit);
+        handleSuccessRedirect();
     });
 })();

@@ -463,6 +463,112 @@ button:focus-visible,
     transform: translateY(-2px);
 }
 
+/* ── Projects ── */
+.release-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    background: rgb(59 130 246 / 0.12);
+    border: 1px solid rgb(59 130 246 / 0.35);
+    border-radius: 1.25rem;
+    padding: 1rem 1.25rem;
+}
+
+.release-badge-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.release-badge-date {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.project-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #d4d4d4;
+    background: rgb(255 255 255 / 0.06);
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 9999px;
+    padding: 0.55rem 0.9rem;
+}
+
+.project-meta-pill i {
+    color: var(--primary);
+    font-size: 0.7rem;
+}
+
+.project-subtitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.movement-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.08);
+    border: 1px solid rgb(255 255 255 / 0.15);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #a3a3a3;
+}
+
+.movement-number-accent {
+    background: rgb(59 130 246 / 0.2);
+    border-color: rgb(59 130 246 / 0.5);
+    color: var(--primary);
+}
+
+.project-goals li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    line-height: 1.6;
+}
+
+.project-goals i {
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+}
+
+.project-details dt {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.project-details dd {
+    color: #e5e5e5;
+    line-height: 1.5;
+}
+
+.project-highlight {
+    box-shadow: 0 0 0 1px rgb(59 130 246 / 0.15), 0 16px 40px -12px var(--primary-glow);
+}
+
 /* ── Legal pages ── */
 .legal-content h2 {
     font-family: 'Space Grotesk', sans-serif;

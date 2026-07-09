@@ -824,34 +824,127 @@
 
         <section id="contatti" class="bg-black py-12 sm:py-16 md:py-20 lg:py-24">
             <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-10 lg:gap-16 reveal">
-                    <div>
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 reveal">
+                    <div class="lg:col-span-4">
                         <h2 class="section-title text-4xl md:text-5xl heading-font tracking-tighter mb-8">CONTATTI</h2>
+                        <p class="text-neutral-400 mb-8 leading-relaxed">Richiedi un preventivo per concerti, eventi, DJ set, produzioni o servizi tecnici. Rispondo personalmente a ogni richiesta.</p>
                         <div class="space-y-8">
-                            <a href="mailto:danielfcalzone@gmail.com" class="flex items-center gap-x-6 group" aria-label="Invia email a danielfcalzone@gmail.com">
+                            <a href="mailto:danielcalzonelive@gmail.com" class="flex items-center gap-x-6 group" aria-label="Invia email a danielcalzonelive@gmail.com">
                                 <i class="fa-solid fa-envelope text-4xl text-blue-500 group-hover:scale-110" aria-hidden="true"></i>
                                 <div>
-                                    <div class="text-sm text-neutral-400">EMAIL</div>
-                                    <div class="text-xl sm:text-2xl md:text-3xl break-all">danielfcalzone@gmail.com</div>
+                                    <div class="text-sm text-neutral-400">EMAIL EVENTI & LIVE</div>
+                                    <div class="text-lg sm:text-xl break-all">danielcalzonelive@gmail.com</div>
+                                </div>
+                            </a>
+                            <a href="mailto:danielfcalzone@gmail.com" class="flex items-center gap-x-6 group" aria-label="Invia email a danielfcalzone@gmail.com">
+                                <i class="fa-solid fa-envelope text-4xl text-neutral-500 group-hover:scale-110" aria-hidden="true"></i>
+                                <div>
+                                    <div class="text-sm text-neutral-400">EMAIL GENERALE</div>
+                                    <div class="text-lg sm:text-xl break-all">danielfcalzone@gmail.com</div>
                                 </div>
                             </a>
                             <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center gap-x-6 group" aria-label="Apri Instagram @danielkheelz">
                                 <i class="fa-brands fa-instagram text-4xl text-pink-500 group-hover:scale-110" aria-hidden="true"></i>
                                 <div>
                                     <div class="text-sm text-neutral-400">INSTAGRAM</div>
-                                    <div class="text-xl sm:text-2xl md:text-3xl">@danielkheelz</div>
+                                    <div class="text-xl sm:text-2xl">@danielkheelz</div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="bg-neutral-900 rounded-3xl p-8 md:p-10">
-                        <h3 class="text-2xl mb-8">Pronto per collaborare?</h3>
-                        <p class="text-neutral-400 mb-8">Live, produzioni elettroniche, eventi o studio: contattami per progetti musicali, tecnici o di direzione artistica.</p>
-                        <a href="https://www.instagram.com/danielkheelz/?hl=en" target="_blank" rel="noopener noreferrer"
-                           class="block w-full text-center py-6 bg-blue-500 hover:bg-white text-black font-semibold text-xl rounded-3xl"
-                           aria-label="Invia messaggio su Instagram">
-                            INVIA MESSAGGIO
-                        </a>
+
+                    <div class="lg:col-span-8">
+                        <div class="quote-form-card bg-neutral-900 border border-white/10 rounded-3xl p-6 sm:p-8 md:p-10">
+                            <h3 class="text-2xl sm:text-3xl heading-font tracking-tight mb-2">Richiedi un preventivo</h3>
+                            <p class="text-neutral-400 mb-8">Compila il modulo per eventi, concerti e collaborazioni professionali.</p>
+
+                            <form id="quoteForm" class="quote-form" novalidate>
+                                <div class="form-honeypot" aria-hidden="true">
+                                    <label for="gotcha">Non compilare</label>
+                                    <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="form-field">
+                                        <label for="nome" class="form-label">Nome e cognome *</label>
+                                        <input type="text" id="nome" name="nome" class="form-input" required autocomplete="name" maxlength="120">
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="email" class="form-label">Email *</label>
+                                        <input type="email" id="email" name="email" class="form-input" required autocomplete="email" maxlength="120">
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="telefono" class="form-label">Telefono</label>
+                                        <input type="tel" id="telefono" name="telefono" class="form-input" autocomplete="tel" maxlength="30">
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="tipo_evento" class="form-label">Tipo di evento</label>
+                                        <select id="tipo_evento" name="tipo_evento" class="form-input form-select">
+                                            <option value="">Seleziona...</option>
+                                            <option value="concerto">Concerto</option>
+                                            <option value="evento_privato">Evento privato</option>
+                                            <option value="festival">Festival</option>
+                                            <option value="registrazione">Registrazione in studio</option>
+                                            <option value="corporate">Evento corporate</option>
+                                            <option value="altro">Altro</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="data_evento" class="form-label">Data evento</label>
+                                        <input type="date" id="data_evento" name="data_evento" class="form-input">
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="luogo" class="form-label">Luogo / Città</label>
+                                        <input type="text" id="luogo" name="luogo" class="form-input" maxlength="120" placeholder="Es. Milano, Roma...">
+                                    </div>
+                                </div>
+
+                                <fieldset class="form-fieldset">
+                                    <legend class="form-label">Servizi richiesti *</legend>
+                                    <div class="service-options">
+                                        <label class="service-chip">
+                                            <input type="checkbox" name="servizi" value="violista">
+                                            <span>Violista</span>
+                                        </label>
+                                        <label class="service-chip">
+                                            <input type="checkbox" name="servizi" value="dj">
+                                            <span>DJ</span>
+                                        </label>
+                                        <label class="service-chip">
+                                            <input type="checkbox" name="servizi" value="producer">
+                                            <span>Producer</span>
+                                        </label>
+                                        <label class="service-chip">
+                                            <input type="checkbox" name="servizi" value="stage_manager">
+                                            <span>Stage Manager</span>
+                                        </label>
+                                        <label class="service-chip">
+                                            <input type="checkbox" name="servizi" value="tecnico_suono">
+                                            <span>Tecnico del suono</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div class="form-field">
+                                    <label for="messaggio" class="form-label">Messaggio / Dettagli evento *</label>
+                                    <textarea id="messaggio" name="messaggio" class="form-input form-textarea" rows="5" required minlength="10" maxlength="3000" placeholder="Descrivi l'evento, date, location, esigenze tecniche e ogni dettaglio utile per il preventivo."></textarea>
+                                </div>
+
+                                <label class="form-privacy">
+                                    <input type="checkbox" name="privacy" value="1" required>
+                                    <span>Ho letto e accetto l'<a href="privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per la gestione della richiesta.</span>
+                                </label>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="form-submit">
+                                        <span data-btn-label>Invia richiesta preventivo</span>
+                                        <span data-btn-loading hidden><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Invio in corso...</span>
+                                    </button>
+                                </div>
+
+                                <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -949,6 +1042,7 @@
     </div>
 
     <script src="js/cookie-consent.js" defer></script>
+    <script src="js/contact-form.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>

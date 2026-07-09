@@ -1,0 +1,7 @@
+{
+  "name": "danielkhelz-site",
+  "private": true,
+  "dependencies": {
+    "resend": "^4.5.1"
+  }
+}

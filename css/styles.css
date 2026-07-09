@@ -684,6 +684,206 @@ button:focus-visible,
     min-height: 480px;
 }
 
+/* ── Contact form ── */
+.quote-form-card {
+    box-shadow: 0 20px 50px -20px rgb(0 0 0 / 0.6);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-field--full {
+        grid-column: 1 / -1;
+    }
+}
+
+.form-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a3a3a3;
+    margin-bottom: 0.45rem;
+}
+
+.form-input {
+    width: 100%;
+    background: rgb(10 10 10 / 0.8);
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: 1rem;
+    padding: 0.85rem 1rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.form-input::placeholder {
+    color: #737373;
+}
+
+.form-input:hover {
+    border-color: rgb(255 255 255 / 0.25);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23a3a3a3' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+.form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+}
+
+.service-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.service-chip {
+    cursor: pointer;
+}
+
+.service-chip input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.service-chip span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 0.95rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(255 255 255 / 0.18);
+    background: rgb(255 255 255 / 0.04);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #d4d4d4;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.service-chip input:checked + span,
+.service-chip:hover span {
+    border-color: rgb(59 130 246 / 0.6);
+    background: rgb(59 130 246 / 0.15);
+    color: #ffffff;
+}
+
+.service-chip input:focus-visible + span {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.form-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.85rem;
+    color: #a3a3a3;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+}
+
+.form-privacy input {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    accent-color: var(--primary);
+}
+
+.form-privacy a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.form-privacy a:hover {
+    color: #ffffff;
+}
+
+.form-actions {
+    margin-top: 0.5rem;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 1.5rem;
+    background: var(--primary);
+    color: #000000;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.form-submit:hover:not(:disabled) {
+    background: #ffffff;
+    transform: scale(1.02);
+}
+
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.form-status--success {
+    background: rgb(34 197 94 / 0.12);
+    border: 1px solid rgb(34 197 94 / 0.35);
+    color: #86efac;
+}
+
+.form-status--error {
+    background: rgb(239 68 68 / 0.12);
+    border: 1px solid rgb(239 68 68 / 0.35);
+    color: #fca5a5;
+}
+
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 /* ── Legal pages ── */
 .legal-content h2 {
     font-family: 'Space Grotesk', sans-serif;
